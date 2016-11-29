@@ -51,6 +51,26 @@ public class Person_Test {
 		
 	}
 	
+	@Test
+	public void addPersonTest() {
+		PersonDAL.addPerson(person1);
+	}
+	
+	@Test
+	public void getPersonTest() {
+		PersonDAL.getPerson(person1UUID);
+	}
+	
+	@Test
+	public void deletePersonTest() {
+		PersonDAL.deletePerson(person1UUID);
+	}
+	
+	@Test
+	public void updatePersonTest() {
+		PersonDAL.updatePerson(person1);
+	}
+	
 	
 
 }

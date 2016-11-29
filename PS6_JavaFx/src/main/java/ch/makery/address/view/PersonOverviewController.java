@@ -117,7 +117,7 @@ public class PersonOverviewController {
         	
         	UUID perID = selectedPerson.getPersonID();
         	System.out.println("Try to delete: " + perID.toString());
-        	
+        	PersonDAL.deletePerson(perID);
         	//TODO: Delete the person, call the deletePerson(perID) method
         	//		in the DAL
         	 
@@ -146,15 +146,7 @@ public class PersonOverviewController {
         boolean okClicked = mainApp.showPersonEditDialog(tempPerson);
         if (okClicked) {
         	//PS6 - Calling the addPerson method
-        	PersonDomainModel per = new PersonDomainModel();
-        	per.setPersonID(tempPerson.getPersonID());
-        	per.setFirstName(tempPerson.getFirstName());
-        	per.setMiddleName(tempPerson.getMiddleName());
-        	per.setLastName(tempPerson.getLastName());
-        	per.setCity(tempPerson.getCity());
-        	per.setStreet(tempPerson.getStreet());
-        	per.setPostalCode(tempPerson.getPostalCode());
-        	per.setBirthday(tempPerson.getBirthday());
+        	PersonDAL.addPerson(tempPerson);
         	
         	//TODO: Delete the person, call the addPerson(perID) method
         	//		in the DAL
@@ -174,16 +166,8 @@ public class PersonOverviewController {
             boolean okClicked = mainApp.showPersonEditDialog(selectedPerson);
             if (okClicked) {
             	
-            	//PS6 - Calling the updatePerson method
-            	PersonDomainModel updatePer = new PersonDomainModel();            	
-            	updatePer.setPersonID(selectedPerson.getPersonID());
-            	updatePer.setFirstName(selectedPerson.getFirstName());
-            	updatePer.setMiddleName(selectedPerson.getMiddleName());
-            	updatePer.setLastName(selectedPerson.getLastName());
-            	updatePer.setCity(selectedPerson.getCity());
-            	updatePer.setStreet(selectedPerson.getStreet());
-            	updatePer.setPostalCode(selectedPerson.getPostalCode());
-            	updatePer.setBirthday(selectedPerson.getBirthday());
+            	//PS6 - Calling the updatePerson method       	
+            	PersonDAL.updatePerson(selectedPerson);
             	
 
             	
